@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
@@ -28,5 +30,6 @@
 }
 
 .head-class {
-  color: red
+  width: 700px;
+  margin:20px;
 }

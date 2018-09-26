@@ -1,5 +1,6 @@
 import React , { Component } from 'react'
 import axios from '../utils/aixos'
+import { Card } from 'antd';
 
 
 class Head extends Component {
@@ -24,11 +25,22 @@ class Head extends Component {
   }
   render () {
       const _data = this.state.data;
+      const cardstyle = {
+          marginTop: '20px',
+          boxShadow: '0 4px 18px -4px rgba(0,0,0,.1)'
+      }
       return (
         <div className="head-class">
             {
                 _data.map(function(item, i) {
-                    return <h1 key={i}>{item.title}</h1>
+                    return <div key={i} style={cardstyle}> <Card
+                    type="inner"
+                    title={item.title}
+                    extra={<a href="#">More</a>}
+                    >
+                    {item.summary}
+                    </Card>
+                    </div>
                 })
             }
         </div>
