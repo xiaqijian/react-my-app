@@ -23,6 +23,9 @@ class Head extends Component {
          console.log(err)
      })
   }
+  handClick () {
+      console.log('我遭到了点击')
+  }
   render () {
       const _data = this.state.data;
       const cardstyle = {
@@ -30,7 +33,7 @@ class Head extends Component {
           boxShadow: '0 4px 18px -4px rgba(0,0,0,.1)'
       }
       return (
-        <div className="head-class">
+        <div className="head-class" onClick={this.handClick.bind(this)}>
             {
                 _data.map(function(item, i) {
                     return <div key={i} style={cardstyle}> <Card
