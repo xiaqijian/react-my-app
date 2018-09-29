@@ -8,16 +8,19 @@ import About from './components/about'
 import Home from './components/home'
 
 
-// class App2 extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1>App</h1>
-        
-//       </div>
-//     )
-//   }
-// }
+class App2 extends Component {
+  render() {
+    return (
+      <div>
+        <h1>App</h1>
+        <ul>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/home">Inbox</Link></li>
+        </ul>
+      </div>
+    )
+  }
+}
 
 class App extends Component {
   render() {
@@ -25,15 +28,10 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <ul>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/home">Inbox</Link></li>
-          </ul>
+              <App2></App2>
               <Route path="/about" component={About} />
               <Route path="/home" component={Home} />
           </div>
-       
-        
         </Router>
       </div>
     );
